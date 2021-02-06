@@ -645,6 +645,12 @@ For Let's Encrypt to work, you also need to:
 3. Open port 80 if it isn't. That port is used to verify that you control the domain
 4. If you are using Cloudflare, change the SSL setting under Crypto to `Full` or `Full (strict)`
 
+> **Warning:** When using Let's Encrypt certificate generation, make sure there's nothing in front of your server that redirects from HTTP to HTTPS (like CloudFlare), because that will break the generation process and lead to NGINX errors. This is because (as is stated in point 3. above) Let's Encrypt expects to be able to connect to your domain(s) on port 80, i.e. using plain HTTP (at least the first time, when HTTPS is not working yet).
+> 
+> Instead, use the `ssl: { forceSSL: true }` option in `mup.js` and let the NGINX reverse proxy make this redirection.
+>
+> See [#1030](https://github.com/zodern/meteor-up/issues/1030#issuecomment-533618535) for more about this.
+
 After changing the config, run `mup setup` and `mup reconfig`. It will automatically create the certificates and setup SSL, which can take up to a few minutes. The certificates will be automatically renewed when they expire within 30 days.
 
 If you are using custom certificates instead, it would look like:
