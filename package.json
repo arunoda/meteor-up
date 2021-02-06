@@ -59,7 +59,7 @@
     "gfm-code-blocks": "^1.0.0",
     "keypair": "^1.0.1",
     "mocha": "^6.2.3",
-    "node-forge": "^0.7.1",
+    "node-forge": "^0.10.0",
     "nyc": "^15.0.1",
     "sinon": "^7.5.0",
     "stylelint": "^12.0.1",
