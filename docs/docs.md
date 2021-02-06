@@ -633,7 +633,8 @@ module.exports = {
       // Enable let's encrypt to create free certificates.
       // The email is used by Let's Encrypt to notify you when the
       // certificates are close to expiring.
-      letsEncryptEmail: 'email@domain.com'
+      // You can choose it arbitrarily
+      letsEncryptEmail: 'your@email.com'
     }
   }
 };
