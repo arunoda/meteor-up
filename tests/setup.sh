@@ -32,7 +32,7 @@ if [[ -z $( docker images -aq mup-tests-server-docker) ]]; then
     docker exec -t mup-tests-server-docker-setup docker pull mongo:3.4.1
     docker exec -t mup-tests-server-docker-setup docker pull kadirahq/meteord
     docker exec -t mup-tests-server-docker-setup docker pull abernix/meteord:base
-    docker exec -t mup-tests-server-docker-setup docker pull jwilder/nginx-proxy
+    docker exec -t mup-tests-server-docker-setup docker pull zodern/nginx-proxy
     docker exec -t mup-tests-server-docker-setup docker pull jrcs/letsencrypt-nginx-proxy-companion:latest
     docker commit mup-tests-server-docker-setup mup-tests-server-docker
     docker rm -f mup-tests-server-docker-setup
